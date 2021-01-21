@@ -6,7 +6,7 @@ function parralax(e, obj) {
 
     let moveX = -((clientWidth / 2) - e.clientX) / 30;
     let moveY = -((clientHeight / 2) - e.clientY) / 30;
-    console.log(`${e.clientX}  ${e.clientY}`)
+    
     obj.style.transform = `translate(${moveX}px, ${moveY}px)`;
 }
 
