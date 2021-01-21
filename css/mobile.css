@@ -1,0 +1,229 @@
+@media screen and (max-width: 768px) {
+    .wrapper {
+        overflow-y: auto;
+        height: auto;
+        background-image: url("../images/bg_mobile.png");
+        background-size: contain;
+        background-attachment: local;
+        background-position: left;
+        background-repeat: space;
+    }
+
+    .wrapper__upper-shadow {
+        height: 500px;
+        background-image: linear-gradient(to bottom, #000000 16%, rgba(0, 0, 0, 0.69) 42%, rgba(0, 0, 0, 0) 100%);
+        opacity: 0.8;
+        z-index: 4;
+    }
+
+    .wrapper__bottom {
+        visibility: hidden;
+    }
+
+    .circle_first {
+        animation-duration: 40s;
+    }
+
+    .mobile-img {
+        display: block;
+    }
+
+    .desctop-img {
+        display: none;
+    }
+
+    .content {
+        flex-wrap: nowrap;
+        height: auto;
+        padding-top: 30px;
+        align-items: center;
+    }
+
+    .logo, .free-likes, .reward, .best-frontend {
+        flex: auto;
+    }
+
+    .best-frontend {
+        /* overflow-y: clip; */
+        order: 2;
+        height: 500px;
+        margin-top: 40px;
+    }
+
+    .best-frontend__knight {
+        left: 0;
+    }
+
+    .free-likes {
+        order: 3;
+        padding: 40px;
+    }
+    
+    .free-likes__content {
+        align-items: center;
+    }
+
+    .best-frontend__text {
+        padding-right: 0;
+        margin-left: 30px;
+        margin-top: 280px;
+        font-size: 50px;
+    }
+
+    .likes {
+        margin-right: 32px;
+    }
+
+    .free-likes__button {
+        margin-right: 10px;
+    }
+    
+    .reward {
+        order: 4;
+        margin-top: 60px;
+    }
+
+    .footer {
+        margin-top: 60px;
+    }
+
+    .footer__shadow {
+        display: block !important;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+    }
+
+    .footer__container img {
+        width: auto;
+        height: auto;
+        padding: 16px;
+    }
+
+    .footer__left, .footer__right {
+        justify-content: center;
+        flex-wrap: wrap;
+        border-top: #ffffff2f 1px solid;
+        padding: 5px 0;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .best-frontend {
+        height: 370px;
+    }
+    
+    .best-frontend__text {
+        font-size: 35px;
+        margin-top: 187px;
+        margin-left: 0;
+    }
+
+    .best-frontend__text_front {
+        -webkit-text-stroke: 1px rgb(255, 255, 255);
+    }
+
+    .best-frontend__text_rear {
+        -webkit-text-stroke: 1px rgb(255, 255, 255);
+    }
+
+    .best-frontend__circle {
+        top: 300px;
+        left: 33px;
+    }
+
+    .best-frontend__knight {
+        width: 252px;
+        height: 400px;
+        left: -35px;
+    }
+
+    .best-frontend__castle {
+        height: 330px;
+        width: 300px;
+    }
+
+    .likes {
+        margin-left: -5px;
+        margin-right: 0;
+        font-size: 45px;
+    }
+
+    .likes__before {
+        margin-right: -8px;
+        flex: 32px 0 0;
+    }
+
+    .likes__after {
+        margin-left: 14px;
+        flex: 32px 0 0;
+    }
+
+    .likes__shadow {
+        left: -8px;
+    }
+
+    .free-likes__button {
+        width: 266px;
+        height: 60px;
+        font-size: 19px;
+        margin-top: 12px;
+    }
+
+    .free-likes__addition-info {
+        margin-top: 19px;
+    }
+
+    .reward {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 319px) {
+    .logo img {
+        width: 195px;
+        height: 30px;
+    }
+
+    .best-frontend__text {
+        font-size: 24px;
+        margin-left: 0;
+    }
+
+    .best-frontend__knight {
+        left: -45px;
+    }
+
+    .best-frontend__circle {
+        left: -18px;
+    }
+
+    .free-likes__text {
+        font-size: 24px;
+    }
+
+    .likes {
+        font-size: 36px;
+    }
+
+    .free-likes__button {
+        width: 230px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .free-likes__addition-info {
+        font-size: 14px;
+    }
+
+    .reward__info {
+        max-width: 185px;
+    }
+
+    .reward__main-text {
+        font-size: 16px;
+    }   
+}
