@@ -10,9 +10,6 @@ function parralax(e, obj) {
     obj.style.transform = `translate(${moveX}px, ${moveY}px)`;
 }
 
-let knight = document.getElementById("knight");
-document.addEventListener("mousemove", e => (parralax(e, knight)));
-
 let background = {
     initialize: function(ctx, width, height) {
         this.ctx = ctx;
@@ -111,7 +108,7 @@ let background = {
         }
     },
     drawLines: function() {
-        ctx.clearRect(0, 0, this.width, this.height);
+        this.ctx.clearRect(0, 0, this.width, this.height);
         
         for(let y = 0; y < this.points.length; y++) {
             let point = this.points[y];
@@ -119,13 +116,13 @@ let background = {
             for(let i = 0; i < point.lines.length; i++) {
                 let line = point.lines[i];
     
-                ctx.beginPath();
-                ctx.moveTo(line.x, line.y);
-                ctx.lineTo(line.x + line.dx * line.length, line.y + line.dy * line.length);
-                ctx.lineWidth = this.lineWidth;
-                ctx.strokeStyle = this.lineColor;
-                ctx.lineCap = 'round';
-                ctx.stroke();
+                this.ctx.beginPath();
+                this.ctx.moveTo(line.x, line.y);
+                this.ctx.lineTo(line.x + line.dx * line.length, line.y + line.dy * line.length);
+                this.ctx.lineWidth = this.lineWidth;
+                this.ctx.strokeStyle = this.lineColor;
+                this.ctx.lineCap = 'round';
+                this.ctx.stroke();
             }
         }
     },
@@ -138,21 +135,26 @@ let background = {
     }
 }
 
-let canvas = document.getElementById("bg");
-let ctx = canvas.getContext("2d");
-
-canvas.width = document.documentElement.clientWidth;
-canvas.height = document.documentElement.clientHeight;
-
-background.initialize(ctx, canvas.clientWidth, canvas.clientHeight);
-
-setInterval(() => background.run(), 20);
-window.addEventListener("resize", e => {
+window.onload = () => {
+    let knight = document.getElementById("knight");
+    document.addEventListener("mousemove", e => (parralax(e, knight)));
+    
+    let canvas = document.getElementById("bg");
+    let ctx = canvas.getContext("2d");
+    
     canvas.width = document.documentElement.clientWidth;
     canvas.height = document.documentElement.clientHeight;
-    background.resize(canvas.clientWidth, canvas.clientHeight);
-
-    if(canvas.width < 769) {
-        background.maxPointsAmount = 1;
-    }
-});
+    
+    background.initialize(ctx, canvas.clientWidth, canvas.clientHeight);
+    
+    setInterval(() => background.run(), 20);
+    window.addEventListener("resize", e => {
+        canvas.width = document.documentElement.clientWidth;
+        canvas.height = document.documentElement.clientHeight;
+        background.resize(canvas.clientWidth, canvas.clientHeight);
+    
+        if(canvas.width < 769) {
+            background.maxPointsAmount = 1;
+        }
+    });
+};
