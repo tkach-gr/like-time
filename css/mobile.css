@@ -50,8 +50,16 @@
         margin-top: 40px;
     }
 
+    .best-frontend__castle {
+        bottom: 0;
+    }
+
     .best-frontend__knight {
         left: 0;
+    }
+
+    .best-frontend__circle {
+        display: block;
     }
 
     .free-likes {
